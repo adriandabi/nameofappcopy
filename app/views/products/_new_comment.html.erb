@@ -1,0 +1,26 @@
+<% if signed_in? %>
+
+  <div id="add_review_div_around">
+
+    <!-- <h4>Add a review:</h4> -->
+    <%= form_for([@product, @product.comments.build], remote: true) do |f| %>
+
+    <!-- <p> -->
+      <!-- < % = f.label :body, "Add a quack for \"#{@product.name}\"", id: "review_label" % > -->
+    <!-- </p> -->
+    <p>
+      <%= f.text_area :body, id:"showproduct_newcommentbody", class: "form-control" %>
+    </p>
+
+    <p>
+      <div class="rating"></div>
+    </p>
+
+    <p>
+      <%= f.submit "Quack", class: "btn btn-default" %>
+    </p>
+    <% end %>
+
+  </div> <!-- / id="add_review_txtbox" -->
+
+<% end %>

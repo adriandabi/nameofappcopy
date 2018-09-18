@@ -1,0 +1,182 @@
+
+// Color variables
+$black: #333333;
+$yellow: #FFDC0E;
+$light_yellow: #FFFFEB;
+$middle_yellow: #FEFAE2;
+$light_grey: #EEEEEE;
+
+// Button and Form-input variables
+$btn_height: 46px;
+$btn_font_size: 0.8em;
+
+body {
+  background: image-url('bg_matrix_duck.png');
+  background-color: #FFFFEB;
+  // color: #333;
+  // margin: 33px;
+  font-family: Neucha, verdana, arial, helvetica, sans-serif;
+  font-size: 20px;
+  // line-height: 18px;
+  text-align: center;
+}
+
+// Default single line form input stylings
+.form_single_line_input {
+  padding-top: 10px;
+  font-size: $btn_font_size;
+  height: $btn_height;
+}
+.form_multi_line_input {
+  padding-top: 15px;
+  font-size: $btn_font_size;
+  // line-height: $btn_height;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-default {
+  background-color: $black !important;
+  border-color: $black;
+  color: $yellow;
+  padding-top: 9px;
+  font-size: $btn_font_size;
+  outline: none;
+  height: $btn_height;
+}
+.btn-default:hover {
+  background-color: black !important;
+  border-color: $black;
+  color: $yellow;
+  outline: none;
+  box-shadow: 0 0 20px $yellow;
+  height: $btn_height;
+}
+.btn-default:active {
+  background-color: $black !important;
+  border-color: $black;
+  color: $yellow;
+  outline: none;
+  height: $btn_height;
+}
+.btn-default:hover:active {
+  background-color: $black !important;
+  border-color: $black;
+  color: $yellow;
+  outline: none;
+  height: $btn_height;
+}
+.btn-default:focus {
+  background-color: $black !important;
+  border-color: $black;
+  color: $yellow;
+  outline: none;
+  height: $btn_height;
+}
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover {
+  background-color: $black !important;
+  border-color: $black;
+  color: $yellow;
+  padding-top: 9px;
+  font-size: 0.8em;
+  outline: none;
+  height: $btn_height;
+}
+
+// p, ol, ul, td {
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px;
+// }
+
+////////////////////////////////////////////////////////
+// - Old above this line (before creating user scaffolding)
+////////////////////////////////////////////////////////
+
+// body {
+//   background-color: #fff;
+//   color: #333;
+//   margin: 33px;
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px;
+// }
+
+// p, ol, ul, td {
+//   font-family: verdana, arial, helvetica, sans-serif;
+//   font-size: 13px;
+//   line-height: 18px;
+// }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+// a {
+//   color: #000;
+//
+//   &:visited {
+//     color: #666;
+//   }
+//
+//   &:hover {
+//     color: #fff;
+//     background-color: #000;
+//   }
+// }
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 7px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+label {
+  display: block;
+}

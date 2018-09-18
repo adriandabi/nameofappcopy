@@ -1,0 +1,73 @@
+<!-- <%= params[:example_key] %>
+<%= params[:example_key].to_i * 10 %> -->
+
+<%= javascript_include_tag 'alert_fade.js' %>
+
+<% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p id="notice" class="alert alert-info"><%= alert %></p>
+<% end %>
+
+<h1 id="homepage_title">Intro duck tion</h2>
+
+<p id="homepage_intro">
+  Are you a programmer that is stuck with a coding problem? You have come to the right place. Book your chat with a rubber duck now! You will find that explaining the bug out loud will help you understand and solve it. You can talk to many different ducks, which all have their specific mentoring qualities. Don't be a stranger!
+</p>
+
+<!-- ********************** -->
+<!-- Image Carousel         -->
+<!-- ********************** -->
+
+<% if (Product.calculate(:count, :all) === 0) %>
+
+  <%= "Error: None found" %>
+
+<% else %>
+
+  <div class="container-fluid">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% @cnt = 0 %>
+        <% @products.each do |product| %>
+          <% if (@cnt == 0) %>
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <% else %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%= "#{@cnt}" %>"></li>
+          <% end %>
+          <% @cnt += 1 %>
+        <% end %>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+
+        <%= render partial: "product", collection: @products %>
+        <!-- Could also be done as follows: -->
+        <!-- < % = render @products % > -->
+
+        <!-- < % @products.each do |product| % > -->
+          <!-- < % = render partial: "product", locals: {product: product} % > -->
+          <!-- could also be done with the shorter version: -->
+          <!-- < % = render product % > -->
+        <!-- < % end % > -->
+
+      </div>
+      <!-- Carousel Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div> <!-- End Carousel / container-fluid -->
+
+  <script>
+    $('.carousel').carousel();
+  </script>
+
+<% end %>

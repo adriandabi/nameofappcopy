@@ -1,0 +1,27 @@
+<%= javascript_include_tag 'alert_fade.js' %>
+
+<% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p id="notice" class="alert alert-info"><%= alert %></p>
+<% end %>
+
+<h1>User Name</h1>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<br>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<br><br><br>

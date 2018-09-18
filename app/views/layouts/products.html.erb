@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RverstratenWebshop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Neucha', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <%= render "shared/header" %>
+
+    <%= render "shared/nav" %>
+
+    <div id="body_wrapper">
+      <%= yield %>
+      <div id="top_bottom_spacing"></div>
+    </div> <!-- / body_wrapper -->
+
+    <%= render "shared/footer" %>
+
+  </body>
+</html>

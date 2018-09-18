@@ -1,0 +1,58 @@
+<%= javascript_include_tag 'alert_fade.js' %>
+
+<% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p id="notice" class="alert alert-info"><%= alert %></p>
+<% end %>
+
+<% if current_user.admin? %>
+  <h1>Users</h1>
+<% else %>
+ <h1>User</h1>
+<% end %>
+
+<div class="content_width_wrapper">
+
+  <hr>
+  <% @users.each do |user| %>
+    <% if (current_user.admin? || (current_user.id == user.id)) %>
+      <p>
+        <span>
+          <% if (user.first_name == nil) %>
+            <%= "?" %>
+          <% else %>
+            <%= user.first_name %>
+          <% end %>
+        </span>
+        <span>
+          <% if (user.last_name == nil) %>
+            <%= "?" %>
+          <% else %>
+            <%= user.last_name %>
+          <% end %>
+        </span>
+        <br>
+        <span>
+          <%= user.email %>
+        </span>
+        <br>
+        <!-- < % = link_to 'Show', user % > -->
+        <% if (current_user.id == user.id) %>
+          <%= link_to 'Edit', edit_user_path(user) %>
+        <% else %>
+          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </p>
+      <hr>
+    <% end %>
+  <% end %>
+
+  <!-- <br>
+
+  < % = link_to 'New User', new_user_path % > -->
+
+  <br><br><br>
+
+</div>

@@ -1,0 +1,94 @@
+<%= javascript_include_tag 'alert_fade.js' %>
+
+<% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p id="notice" class="alert alert-info"><%= alert %></p>
+<% end %>
+
+<div class="content_width_wrapper">
+
+  <h1 id="session_show_title">Debug Session</h1>
+
+  <!-- <h1 id="product_show_title"><%= @product.name %></h1> -->
+  <p id="session_show_description"><span class="text-overflow"><%= @product.name %></span></p>
+
+  <div id="product_show_page_show">
+    <div class="product_show_page_asp_ratio_outer">
+      <div class="product_show_page_asp_ratio_inner">
+        <div class="product_show_page_image">
+          <p>
+            <%= image_tag(@product.image_url,
+              class: "img-responsive product_show_page_image",
+              alt: @product.image_url)
+            %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Reload the current page only once.
+    // This has to be done because this javascript does not reload properly,
+    // when returning to this page. The js-down-counter goes a second per second
+    // faster every time when returning to this debug-session page...
+    // (Probably because of the turbolinks)?
+    $(document).ready(function(){
+      //Check if the current URL contains '#'
+      if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#".
+        url = document.URL+"#";
+        location = "#";
+        //Reload the page
+        location.reload(true);
+      }
+    });
+  </script>
+
+  <div id="some_div">30:00</div>
+
+  <script>
+    // http://jsfiddle.net/6wm3eky9/405/
+    var timeLeft = 1800; // 30 min
+    // var timeLeft = 10;
+    var elem = document.getElementById('some_div');
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+      if (timeLeft == -1) {
+        clearTimeout(timerId);
+        goHome();
+      } else {
+        elem.innerHTML = pad2(Math.floor(timeLeft / 60)) + ":" + pad2(timeLeft % 60);
+        timeLeft--;
+      }
+    }
+
+    function pad2(number) {
+      return (number < 10 ? '0' : '') + number.toString();
+    }
+
+    function goHome() {
+      // < % flash[:notice] = "Debug Session Timeout" % >
+      window.location.href="/";
+      // < % controller.redirect_to root_path % >
+      // alert("Hi");
+    }
+  </script>
+
+  <br>
+  <!-- Feedback button -->
+  <%= audio_tag "quack.mp3", id: "audio-play" %>
+  <p id="session_feedback_btn" class="btn btn-default audioButton">Feedback</p>
+  <script>
+    $(".audioButton").on("click", function() {
+      document.getElementById("audio-play").play();
+    });
+  </script>
+
+  <br><br><br><br>
+
+</div>

@@ -1,0 +1,316 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Color variables
+$black: #333333;
+$yellow: #FFDC0E;
+$light_yellow: #FFFFEB;
+$middle_yellow: #FEFAE2;
+$light_grey: #EEEEEE;
+
+// Button and Form-input variables
+$btn_height: 46px;
+$btn_font_size: 0.8em;
+
+// Content width wrapper div
+.content_width_wrapper {
+  display: block;
+  margin: 0 auto;
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .content_width_wrapper {
+    width: 100%;
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .content_width_wrapper {
+    width: 60%;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .content_width_wrapper {
+    width: 50%;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .content_width_wrapper {
+    width: 50%;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .content_width_wrapper {
+    width: 50%;
+  }
+}
+
+.table {
+  table-layout: fixed;
+}
+
+.text-overflow {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.product-main-bottom-spacing {
+  padding-top: 60px;
+}
+.product-new-bottom-spacing {
+  padding-top: 40px;
+}
+.product-edit-bottom-spacing {
+  padding-top: 40px;
+}
+.product-show-bottom-spacing {
+  padding-top: 60px;
+}
+
+// The following specificity is need to win from "#body_wrapper h1"
+#body_wrapper #product_show_title {
+  margin-bottom: 0;
+  padding-bottom: 5px;
+}
+
+#product_show_description {
+  margin-bottom: 25px;
+}
+
+#product_show_price {
+  padding-top: 25px;
+}
+
+#products_form_name {
+  width: 100%;
+}
+
+
+
+#products_form_description {
+  width: 100%;
+  resize: none;
+  height: 5em;
+}
+
+#products_form_color {
+  width: 100%;
+}
+
+#products_form_price {
+  width: 100%;
+}
+
+#products_form_image_url {
+  width: 100%;
+}
+
+.product_search_field {
+  display: inline-block;
+  width: 250px;
+  margin-top: 10px;
+  padding-top: 8px;
+  font-size: $btn_font_size;
+  height: $btn_height;
+}
+#product_search_btn {
+  margin-top: 1px;
+  // line-height: 0.9;
+  padding-top: 13px;
+  // padding-bottom: 0;
+  font-size: $btn_font_size;
+  height: $btn_height;
+}
+
+#product_index_show {
+  margin: 40px 0 0 0;
+}
+.product_aspect_ratio_outer_2 {
+  position: relative;
+  width: 100%;
+  padding-bottom: calc(100% + 170px);
+  margin: 0 0 15% 0;
+  overflow: hidden;
+  // background-color: white;
+  color: black;
+}
+.product_aspect_ratio_inner_2 {
+  position: absolute;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  text-align: center;
+}
+.product_image_2 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#product_show_page_show {
+  display: block;
+  margin: 0 auto;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  #product_show_page_show {
+    width: 90%;
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #product_show_page_show {
+    width: 80%;
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #product_show_page_show {
+    width: 70%;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  #product_show_page_show {
+    width: 60%;
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  #product_show_page_show {
+    width: 50%;
+  }
+}
+
+.product_show_page_asp_ratio_outer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  margin: 0;
+  overflow: hidden;
+  // background-color: white;
+  color: black;
+}
+.product_show_page_asp_ratio_inner {
+  position: absolute;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  text-align: center;
+}
+.product_show_page_image {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/////////////////////////////////////////////////////////////////////////
+// Product show - Comments/Reviews stylings
+/////////////////////////////////////////////////////////////////////////
+
+#add_review_div_around {
+  // background: $light_yellow;
+  // background: linear-gradient(0.45turn, #ffec81, #fffaca);
+  // background: linear-gradient(to right, $black, #ffec81, $black);
+  background-color: rgba($light_yellow, 0.2);
+  border: solid;
+  border-color: $black;
+  border-radius: 10px;
+  padding: 10px;
+  border-width: 5px;
+  box-shadow: 0 0 50px $yellow;
+}
+
+#showproduct_newcommentbody {
+  background-color: rgba(white, 1);
+  resize: none;
+  // background-color: white;
+  border: solid;
+  border-color: $black;
+  border-width: 2px;
+  width: calc(100% - 20px);
+  display: block;
+  margin: 15px 10px 0 10px;
+  font-size: $btn_font_size;
+}
+
+#review_label {
+  padding-top: 10px;
+}
+
+.comment-delete {
+  color: red;
+}
+
+/////////////////////////////////////////////////////////////////////////
+// Order page
+/////////////////////////////////////////////////////////////////////////
+
+#order_item:last-child {
+  padding-bottom: 60px;
+}
+
+/////////////////////////////////////////////////////////////////////////
+// Pagination styling (product show page)
+// http://railscasts.com/episodes/51-will-paginate-revised?view=asciicast
+// https://www.youtube.com/watch?v=MIf1ojX2AGY
+/////////////////////////////////////////////////////////////////////////
+
+.pagination {
+  background: $light_yellow;
+  cursor: default;
+  height: 22px;
+  a, span, em {
+    padding: 0.4em 0.5em 0.2em 0.5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+  }
+  .disabled {
+    display: none;
+    color: #444444;
+    border: 1px solid #444444;
+    background: $light_grey;
+  }
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: black;
+    color: $yellow;
+    border: 1px solid $black;
+    // box-shadow: 0 0 20px $yellow;
+  }
+  a {
+    text-decoration: none;
+    color: $yellow;
+    border: 1px solid $black;
+    background: $black;
+    &:hover, &:focus {
+      color: $yellow;
+      border-color: $black;
+      background: black;
+    }
+  }
+  // .page_info {
+  //   background: #2e6ab1;
+  //   color: white;
+  //   padding: 0.4em 0.6em;
+  //   width: 22em;
+  //   margin-bottom: 0.3em;
+  //   text-align: center;
+  //   b {
+  //     color: #000033;
+  //     background: #2e6ab1 + 60;
+  //     padding: 0.1em 0.25em;
+  //   }
+  // }
+}
